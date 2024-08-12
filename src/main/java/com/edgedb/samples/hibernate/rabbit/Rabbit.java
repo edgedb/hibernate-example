@@ -3,10 +3,12 @@ package com.edgedb.samples.hibernate.rabbit;
 import com.edgedb.samples.hibernate.figure.Figure;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.PrimaryKeyJoinColumn;
 import jakarta.persistence.Table;
 
 @Entity
 @Table(name = "\"Rabbit\"")
+@PrimaryKeyJoinColumn(name = "figure_id")
 public class Rabbit extends Figure {
 
     public static final int CARROT_NUTRITION = 15;

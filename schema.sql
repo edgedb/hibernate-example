@@ -15,8 +15,8 @@
     );
 
     create table "Fox" (
-        "id" uuid not null,
-        primary key ("id")
+        figure_id uuid not null,
+        primary key (figure_id)
     );
 
     create table "Position" (
@@ -28,8 +28,8 @@
 
     create table "Rabbit" (
         nutrition integer not null,
-        "id" uuid not null,
-        primary key ("id")
+        figure_id uuid not null,
+        primary key (figure_id)
     );
 
     alter table if exists "Carrot" 
@@ -43,11 +43,11 @@
        references "Position";
 
     alter table if exists "Fox" 
-       add constraint FKn8fo7dgo3synr08hfih9ou9c9 
-       foreign key ("id") 
+       add constraint FK3xdohoh9h6cwh7r5q25t3camd 
+       foreign key (figure_id) 
        references "Figure";
 
     alter table if exists "Rabbit" 
-       add constraint FKi43d6kmw9ew5de5dk4b6rbx7k 
-       foreign key ("id") 
+       add constraint FKjxsmj48dcvhsvw0atbg64n001 
+       foreign key (figure_id) 
        references "Figure";
