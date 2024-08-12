@@ -1,5 +1,6 @@
 package com.edgedb.samples.hibernate.carrot;
 
+import java.util.UUID;
 import com.edgedb.samples.hibernate.position.Position;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -13,17 +14,17 @@ import jakarta.persistence.OneToOne;
 public class Carrot {
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @OneToOne(optional = true, fetch = FetchType.LAZY)
     private Position position;
 
-	public int getId() {
+	public UUID getId() {
 		return id;
 	}
 
-	public void setId(int id) {
+	public void setId(UUID id) {
 		this.id = id;
 	}
 
@@ -34,6 +35,4 @@ public class Carrot {
 	public void setPosition(Position position) {
 		this.position = position;
 	}
-
-    
 }
