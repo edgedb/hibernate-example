@@ -1,0 +1,40 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head}" />
+
+<body>
+
+    <header th:replace="~{fragments/header :: header}" />
+
+    <main>
+        <form action="/figures/new" method="post">
+            <input type="hidden" name="x" th:value="${x}" />
+            <input type="hidden" name="y" th:value="${y}" />
+
+            <!-- <div style="padding: 1em 0;">
+                <input type="radio" id="kind-rabbit" name="kind" value="rabbit" />
+                <label for="kind-rabbit">Rabbit</label>
+
+                <br />
+                <input type="radio" id="kind-fox" name="kind" value="fox" />
+                <label for="kind-fox">Fox</label>
+            </div> -->
+
+            <div style="padding: 1em 0;">
+                <h2>
+                    <label for="name">A young rabbit named </label>
+                    <input type="text" name="name" id="name" th:value="${nameSuggestion}" />
+                    emerges from the rabbit hole.
+                </h2>
+            </div>
+
+            <div style="padding: 1em 0;">
+                <input type="submit" value="hop out" />
+            </div>
+        </form>
+    </main>
+
+</body>
+
+</html>

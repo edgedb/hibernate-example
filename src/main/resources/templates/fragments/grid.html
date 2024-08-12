@@ -1,0 +1,11 @@
+<div class="grid">
+    <th:block th:each="cell: ${cells}">
+        <a class="cell" th:href="${cell.href}" th:if="${cell.decay > 0}"
+            th:style="'background-color: color-mix(in srgb, var(--dark) ' + @{${cell.decay}} + '%, var(--light))'">
+            <img th:if="${cell.icon != null}" th:src="${cell.icon}" />
+        </a>
+        <a class="cell" th:href="${cell.href}" th:unless="${cell.decay > 0}">
+            <img th:if="${cell.icon != null}" th:src="${cell.icon}" />
+        </a>
+    </th:block>
+</div>

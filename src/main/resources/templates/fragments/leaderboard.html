@@ -1,0 +1,15 @@
+<div class=table style="grid-template-columns: 1fr 1fr 1fr;">
+    <div class="row header">
+        <span>score</span>
+        <span>name</span>
+        <span>status</span>
+    </div>
+
+    <th:block th:each="figure: ${leaderboard}">
+        <a class="row" th:href="@{|/figures/${figure.id}|}">
+            <span th:text="${figure.score}" class="num" />
+            <span th:text="${figure.getFullName()}" />
+            <span th:text="${figure.getStatusString()}" />
+        </a>
+    </th:block>
+</div>

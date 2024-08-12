@@ -1,0 +1,23 @@
+<!DOCTYPE HTML>
+<html xmlns:th="http://www.thymeleaf.org">
+
+<head th:replace="~{fragments/head :: head}" />
+
+<body>
+
+    <header th:replace="~{fragments/header :: header}" />
+
+    <main>
+        <h2 th:text="${figure.name} + ' is ' + ${figure.getStatusString()}"/>
+
+        <p>score: <span th:text="${figure.score}" /></p>
+
+        <p>hops: <span th:text="${figure.statMoves}" /></p>
+
+        <div th:replace="~{fragments/leaderboard :: div}" />
+    </main>
+
+
+</body>
+
+</html>
