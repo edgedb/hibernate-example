@@ -2,13 +2,14 @@ package com.edgedb.samples.hibernate.figure;
 
 import java.util.Collection;
 import java.util.List;
+import java.util.UUID;
 import org.springframework.data.jpa.repository.EntityGraph;
 import org.springframework.data.repository.Repository;
 import com.edgedb.samples.hibernate.position.Position;
 
 public interface FigureRepo extends Repository<Figure, Long> {
 
-    Figure findById(long personId);
+    Figure findById(UUID id);
 
     @EntityGraph(attributePaths = {"position"})
     List<Figure> findAll();

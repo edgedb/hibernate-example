@@ -7,8 +7,6 @@ import org.springframework.data.repository.Repository;
 import com.edgedb.samples.hibernate.position.Position;
 
 public interface RabbitRepo extends Repository<Rabbit, Long> {
-    Rabbit findById(long id);
-
     int countByPositionIsNotNull();
 
     @EntityGraph(attributePaths = {"position"})

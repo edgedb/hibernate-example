@@ -2,7 +2,7 @@ package com.edgedb.samples.hibernate;
 
 import java.util.ArrayList;
 import java.util.List;
-
+import java.util.UUID;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -63,7 +63,7 @@ public class MainController {
     }
 
     @GetMapping("/figures/{id}")
-    public ModelAndView viewFigure(@PathVariable long id, Model model) {
+    public ModelAndView viewFigure(@PathVariable UUID id, Model model) {
         var figure = figureRepo.findById(id);
         if (figure == null) {
             return new ModelAndView("redirect:/");
@@ -82,7 +82,7 @@ public class MainController {
     }
 
     @GetMapping("/figures/{id}/move")
-    public ModelAndView moveFigure(@PathVariable long id,
+    public ModelAndView moveFigure(@PathVariable UUID id,
             @RequestParam(name = "dx", required = false) Integer dx,
             @RequestParam(name = "dy", required = false) Integer dy) {
         var figure = figureRepo.findById(id);

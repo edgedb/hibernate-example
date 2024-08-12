@@ -1,5 +1,6 @@
 package com.edgedb.samples.hibernate.figure;
 
+import java.util.UUID;
 import com.edgedb.samples.hibernate.position.Position;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
@@ -17,8 +18,8 @@ public abstract class Figure {
 
     @Id
     @Column(name = "id")
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private int id;
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     @Column(nullable = false)
     private String name;
@@ -40,11 +41,11 @@ public abstract class Figure {
 
     // getters and setters
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
