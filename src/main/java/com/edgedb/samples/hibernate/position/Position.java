@@ -1,5 +1,6 @@
 package com.edgedb.samples.hibernate.position;
 
+import java.util.UUID;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.GeneratedValue;
@@ -8,18 +9,18 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name="Position")
+@Table(name = "Position")
 public class Position {
-	@Id
-	@Column(name="id")
-	@GeneratedValue(strategy=GenerationType.IDENTITY)
-	private int id;
+    @Id
+    @Column(name = "id")
+    @GeneratedValue(strategy = GenerationType.UUID)
+    private UUID id;
 
     private int x;
 
     private int y;
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
@@ -31,17 +32,17 @@ public class Position {
         return y;
     }
 
-	public void setId(int id) {
-		this.id = id;
-	}
+    public void setId(UUID id) {
+        this.id = id;
+    }
 
-	public void setX(int x) {
-		this.x = x;
-	}
+    public void setX(int x) {
+        this.x = x;
+    }
 
-	public void setY(int y) {
-		this.y = y;
-	}
+    public void setY(int y) {
+        this.y = y;
+    }
 
     public boolean isAdjacent(Position other) {
         var dx = this.getX() - other.getX();
