@@ -2,8 +2,10 @@ package com.edgedb.samples.hibernate.fox;
 
 import com.edgedb.samples.hibernate.figure.Figure;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "\"Fox\"")
 public class Fox extends Figure {
 
     @Override

@@ -11,9 +11,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Inheritance;
 import jakarta.persistence.InheritanceType;
 import jakarta.persistence.OneToOne;
+import jakarta.persistence.Table;
 
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
+@Table(name = "\"Figure\"")
 public abstract class Figure {
 
     @Id
@@ -30,7 +32,7 @@ public abstract class Figure {
     @OneToOne(optional = true, fetch = FetchType.LAZY)
     private Position position;
 
-    @Column(nullable = false)
+    @Column(nullable = false, name = "stat_moves")
     private int statMoves;
 
     // methods

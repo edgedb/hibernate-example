@@ -3,8 +3,10 @@ package com.edgedb.samples.hibernate.rabbit;
 import com.edgedb.samples.hibernate.figure.Figure;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
+import jakarta.persistence.Table;
 
 @Entity
+@Table(name = "\"Rabbit\"")
 public class Rabbit extends Figure {
 
     public static final int CARROT_NUTRITION = 15;

@@ -9,7 +9,7 @@ import jakarta.persistence.Id;
 import jakarta.persistence.Table;
 
 @Entity
-@Table(name = "Position")
+@Table(name = "\"Position\"")
 public class Position {
     @Id
     @Column(name = "id")
